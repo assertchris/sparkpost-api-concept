@@ -96,5 +96,7 @@ class Client
 
             return $this->proxies[$property];
         }
+
+        return null;
     }
 }
