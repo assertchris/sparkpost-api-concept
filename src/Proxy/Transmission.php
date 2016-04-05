@@ -6,17 +6,26 @@ use SparkPost\Api\Client;
 
 class Transmission
 {
+    /**
+     * @var Client
+     */
     private $client;
 
+    /**
+     * @param Client $client
+     */
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
+    /**
+     * @param array $options
+     *
+     * @return array
+     */
     public function create(array $options)
     {
-        // validate + translate
-
         $formatted = [
             "recipients" => $options["recipients"],
             "content" => [

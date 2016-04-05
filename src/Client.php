@@ -14,9 +14,10 @@ class Client
         "transmission" => Transmission::class,
     ];
 
-    private $proxies = [
-
-    ];
+    /**
+     * @var array
+     */
+    private $proxies = [];
 
     /**
      * @var string
@@ -80,6 +81,11 @@ class Client
         return json_decode($response->getBody(), true);
     }
 
+    /**
+     * @param string $property
+     *
+     * @return mixed
+     */
     public function __get($property)
     {
         if (isset($this->aliases[$property])) {
